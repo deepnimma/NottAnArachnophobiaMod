@@ -19,7 +19,7 @@ Two datapacks are available — install **one**, not both.
 
 ## Datapacks
 
-### NottAnArachnophobia *(remove)*
+### NottAnArachnophobiaMod *(remove)*
 Completely removes spiders and cave spiders. Their drops (string, spider eye) are redistributed to other mobs so nothing becomes unobtainable.
 
 | Original drop | New source |
@@ -89,7 +89,7 @@ git push origin v1.0.0
 ```
 
 Release assets:
-- `NottAnArachnophobia-<tag>.zip`
+- `NottAnArachnophobiaMod-<tag>.zip`
 - `NottASpiderConcealer-<tag>.zip`
 - `NottASpiderConcealer-RP-<tag>.zip`
 # NottAnArachnophobiaMod
