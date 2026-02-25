@@ -1,0 +1,11 @@
+name: CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  validate:
+    uses: ./.github/workflows/validate.yml

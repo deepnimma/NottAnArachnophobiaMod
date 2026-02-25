@@ -1,0 +1,29 @@
+name: Validate
+
+on:
+  workflow_call:
+
+jobs:
+  validate-json:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate all JSON files
+        run: |
+          FAILED=0
+          while IFS= read -r -d '' f; do
+            if python3 -m json.tool "$f" > /dev/null 2>&1; then
+              echo "OK   $f"
+            else
+              echo "FAIL $f"
+              python3 -m json.tool "$f" || true
+              FAILED=1
+            fi
+          done < <(find . \
+            -name '*.json' \
+            -not -path './.gradle/*' \
+            -not -path './.idea/*' \
+            -not -path './.github/*' \
+            -print0)
+          exit $FAILED
