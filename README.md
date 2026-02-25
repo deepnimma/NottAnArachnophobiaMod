@@ -3,6 +3,18 @@
 Minecraft 1.21.1 datapacks for players who don't want spiders in their world.
 Two datapacks are available — install **one**, not both.
 
+## Table of Contents
+
+- [Datapacks](#datapacks)
+  - [NottAnArachnophobia (remove)](#nottanarachnophobia-remove)
+  - [NottASpiderConcealer (replace)](#nottaspiderconcealer-replace)
+- [Installation](#installation)
+  - [Datapack](#datapack)
+  - [Resource pack](#resource-pack-nottaspiderconcealer-only)
+- [In-game Testing](#in-game-testing)
+- [Compatibility](#compatibility)
+- [Releasing](#releasing)
+
 ---
 
 ## Datapacks
