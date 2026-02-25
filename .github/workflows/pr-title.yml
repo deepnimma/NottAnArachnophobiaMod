@@ -1,0 +1,31 @@
+name: PR Title
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+jobs:
+  conventional-commits:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR title follows Conventional Commits
+        env:
+          TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          # Pattern: <type>[optional scope]: <description>
+          # Types: feat, fix, docs, style, refactor, perf, test, chore, ci, build, revert
+          PATTERN='^(feat|fix|docs|style|refactor|perf|test|chore|ci|build|revert)(\([a-zA-Z0-9_-]+\))?(!)?: .+'
+          if echo "$TITLE" | grep -Eq "$PATTERN"; then
+            echo "PR title is valid: $TITLE"
+          else
+            echo "ERROR: PR title does not follow Conventional Commits."
+            echo "Title: $TITLE"
+            echo ""
+            echo "Expected format: <type>[scope]: <description>"
+            echo "Valid types: feat, fix, docs, style, refactor, perf, test, chore, ci, build, revert"
+            echo "Examples:"
+            echo "  feat: add orange slime texture"
+            echo "  fix(concealer): cave spider not converting"
+            echo "  chore!: bump pack format to 57"
+            exit 1
+          fi
