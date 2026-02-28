@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.deepnimma.arachnophobe.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "SpiderSpawnMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

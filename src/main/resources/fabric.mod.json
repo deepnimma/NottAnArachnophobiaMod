@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "arachnophobe",
+  "version": "${version}",
+  "name": "NottAnArachnophobiaMod",
+  "description": "Prevents spiders and cave spiders from existing in your world.",
+  "authors": ["deepnimma"],
+  "environment": "server",
+  "entrypoints": {
+    "main": ["dev.deepnimma.arachnophobe.ArachnophobeMod"]
+  },
+  "mixins": ["arachnophobe.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.16.7",
+    "fabric-api": "*",
+    "minecraft": "~1.21.1"
+  }
+}
